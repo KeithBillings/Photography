@@ -1,0 +1,122 @@
+:root {
+  --light-blue-10: rgba(173, 216, 230, 0.1);
+  --mountain-blue-30: rgba(0, 146, 170, 0.3);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 400;
+  background-color: whitesmoke;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background-color: whitesmoke;
+  padding: 0 20vw;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 10vw;
+  }
+
+  @media screen and (max-width: 425px) {
+    padding: 0;
+  }
+}
+
+.navbar-button {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: inherit;
+
+  & > a {
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    transition: all 0.2s;
+
+    &:hover {
+      color: lightblue;
+    }
+  }
+}
+
+.active-nav {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 90%;
+    position: absolute;
+    top: 0.1rem;
+    left: 5%;
+    background-color: black;
+    z-index: -1;
+    animation: fadeIn 0.4s;
+  }
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right top, var(--light-blue-10), var(--mountain-blue-30)), url('./assets/images/DSC_1398.jpg');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.text-box {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  & .heading-primary {
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 6rem;
+
+    & .heading-primary-main {
+      display: block;
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 1.5rem;
+    }
+
+    & .heading-primary-secondary {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4.5rem;
+      margin-left: 2.5rem;
+    }
+  }
+}
