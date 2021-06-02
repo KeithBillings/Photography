@@ -3,6 +3,15 @@
   --mountain-blue-30: rgba(0, 146, 170, 0.3);
 }
 
+@font-face {
+	font-family: 'EB Garamond' ;
+	src: url(https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap);
+}
+@font-face {
+	font-family: 'Raleway';
+	src: url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap);
+}
+
 *,
 *::before,
 *::after {
@@ -19,7 +28,11 @@ html {
 body {
   box-sizing: border-box;
   font-weight: 400;
-  background-color: whitesmoke;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 400;
 }
 
 @keyframes fadeIn {
@@ -35,7 +48,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  background-color: whitesmoke;
   padding: 0 20vw;
   margin-bottom: 1rem;
 
@@ -46,40 +58,40 @@ body {
   @media screen and (max-width: 425px) {
     padding: 0;
   }
-}
 
-.navbar-button {
-  font-size: 2rem;
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: inherit;
+  .navbar-button {
+    z-index: 10;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 1rem;
 
-  & > a {
-    text-decoration: none;
-    color: black;
-    font-weight: 100;
-    transition: all 0.2s;
+    & > a {
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      transition: all 0.2s;
 
-    &:hover {
-      color: lightblue;
+      &:hover {
+        color: deepskyblue;
+      }
     }
   }
-}
 
-.active-nav {
-  position: relative;
+  .active-nav {
+    position: relative;
 
-  &::after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 90%;
-    position: absolute;
-    top: 0.1rem;
-    left: 5%;
-    background-color: black;
-    z-index: -1;
-    animation: fadeIn 0.4s;
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 90%;
+      position: absolute;
+      top: 0.1rem;
+      left: 5%;
+      border-bottom: 1px solid white;
+      z-index: -1;
+      animation: fadeIn 0.4s;
+    }
   }
 }
 
@@ -87,8 +99,10 @@ body {
   height: 95vh;
   background-image: linear-gradient(to right top, var(--light-blue-10), var(--mountain-blue-30)), url('./assets/images/DSC_1398.jpg');
   background-size: cover;
-  background-position: top;
+  background-position-x: center;
+  background-position-y: 20%;
   position: relative;
+  top: -73px;
 }
 
 .text-box {
@@ -109,6 +123,10 @@ body {
       font-size: 6rem;
       font-weight: 400;
       letter-spacing: 1.5rem;
+
+      @media screen and (max-width: 425px) {
+        font-size: 4rem;
+      }
     }
 
     & .heading-primary-secondary {
@@ -117,6 +135,111 @@ body {
       font-weight: 700;
       letter-spacing: 4.5rem;
       margin-left: 2.5rem;
+
+      @media screen and (max-width: 425px) {
+        letter-spacing: 1.5rem;
+        margin-left: 0;
+      }
     }
   }
+}
+
+.btn {
+  padding: 1.2rem 0 1.2rem 1.2rem;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid;
+  transition: all 0.2s;
+
+  &.btn--white {
+    color: white;
+    border-color: white;
+  }
+
+  &.btn-animated:hover {
+    color: deepskyblue;
+    border-color: deepskyblue;
+  }
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  top: -73px;
+
+  .profile-photo {
+    position: relative;
+
+    .profile-photo--keith {
+      width: 100%;
+    }
+
+    .social-icon-overlay {
+      position: absolute;
+      height: 4.5rem;
+      fill: black;
+      top: 3rem;
+      left: 3rem;
+      border-radius: 1rem;
+      transition: all 0.2s;
+
+      @media screen and (max-width: 425px) {
+        height: 2.5rem;
+        top: 1rem;
+        left: 1rem;
+      }
+    }
+
+    .social-icon-overlay:hover {
+      cursor: pointer;
+      filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.6));
+    }
+  }
+
+  .about-content {
+    padding: 6rem;
+		
+		h1 {
+			font-family: EB Garamond;
+			letter-spacing: .2rem;
+		}
+			
+		.custom-seperator {
+			margin-top: 8rem;
+			margin-bottom: 4rem;
+			content: '';
+			width: 10rem;
+			border-bottom: 1px solid black;
+		}
+  }
+
+	.about-content__text {
+		margin-top: 1rem;
+		font-size: 2rem;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 100;
+		line-height: 3rem;
+		text-align: justify;
+		display: flex;
+    flex-direction: column;
+    height: 75%;
+
+		.book-a-session {
+			display: block;
+			margin-top: auto;
+			text-transform: uppercase;
+			color: black;
+			text-decoration: none;
+
+			svg {
+				margin-left: 2rem;
+				transform: rotate(270deg);
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
+	}
 }

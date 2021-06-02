@@ -1,3 +1,7 @@
-export default function About () {
-  return 'About'
+export default function Portfolio () {
+  return (
+		<div id='portfolio'>
+			portfolio
+		</div>
+	)
 }
