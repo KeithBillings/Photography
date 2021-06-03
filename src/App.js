@@ -16,22 +16,26 @@ function App() {
 		
 		if (theme === 'light'){
 			setTheme('dark');
-			
-			mainParent.classList.remove('theme-light');
-			mainParent.classList.add('theme--dark');
+		
+			mainParent.style.color = 'white';
+			mainParent.style.background = 'rgb(40,40,40)';
 			
 			themeBtn.textContent = 'Light mode';
+			themeBtn.style.background = 'white';
+			themeBtn.style.color = 'black';
 
 			customSeperator.style.borderColor = 'white';
 			bookASessionSVG.style.fill = 'white';
 		}
 		if (theme === 'dark'){
 			setTheme('light');
-			
-			mainParent.classList.remove('theme--dark');
-			mainParent.classList.add('theme--light');
+	
+			mainParent.style.color = 'black';
+			mainParent.style.background = 'white';
 			
 			themeBtn.textContent = 'Dark mode';
+			themeBtn.style.background = 'rgba(40,40,40, 0.5)';
+			themeBtn.style.color = 'white';
 
 			customSeperator.style.borderColor = 'black';
 			bookASessionSVG.style.fill = 'black';
