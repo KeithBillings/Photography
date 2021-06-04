@@ -14,7 +14,7 @@ export default function NavButton(props) {
     } else {
       setIfActive('');
     }
-  }, [activeNav]);
+  }, [activeNav, linkTarget]);
 
   return (
     <div className={`navbar-button ${ifActive}`}>
