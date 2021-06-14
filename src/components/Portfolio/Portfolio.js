@@ -8,9 +8,14 @@ import image7 from '../../assets/images/portfolio/7.jpg';
 import image8 from '../../assets/images/portfolio/8.jpg';
 import image9 from '../../assets/images/portfolio/9.jpg';
 import image10 from '../../assets/images/portfolio/10.jpg';
+import image11 from '../../assets/images/portfolio/11.jpg';
+import image12 from '../../assets/images/portfolio/12.jpg';
+import image13 from '../../assets/images/portfolio/13.jpg';
+import image14 from '../../assets/images/portfolio/14.jpg';
+import image15 from '../../assets/images/portfolio/15.jpg';
 
 export default function Portfolio() {
-  const arrayOfImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
+  const arrayOfImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15];
 
   function getRandomInt() {
     return Math.floor(Math.random() * 3);

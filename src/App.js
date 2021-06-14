@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className='App'>
-      <button className='theme-switch' onClick={handleChangeTheme}></button>
+      <button className='theme-switch' onClick={handleChangeTheme} aria-label='theme switch button'></button>
       <NavBar />
       <Home />
       {/* <Footer /> */}
