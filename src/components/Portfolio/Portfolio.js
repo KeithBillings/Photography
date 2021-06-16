@@ -75,13 +75,13 @@ export default function Portfolio() {
   return (
     <div id='portfolio' className='portfolio-section'>
       {arrayOfImages.map((image, index) => {
-        let tallOrWide = '';
+        let tall = '';
 
         if (getRandomInt() === 1) {
-          tallOrWide = 'tall';
+          tall = 'tall';
         }
 
-        return <img data-src={image} loading='lazy' alt={`${image} ${index}`} key={index} className={`lazy ${tallOrWide}`} />;
+        return <img data-src={image} loading='lazy' alt={`${image} ${index}`} key={index} className={`lazy ${tall}`} />;
       })}
     </div>
   );
