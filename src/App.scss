@@ -384,13 +384,43 @@ a {
 
 // Contact
 .contact-section {
-	padding: 6rem;
-  .title {
-    font-family: EB Garamond;
-    letter-spacing: 0.2rem;
+  padding: 6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .contact__column {
+    .title {
+      font-family: EB Garamond;
+      letter-spacing: 0.2rem;
 
-    @media screen and (max-width: 768px) {
-      font-size: 3rem;
+      @media screen and (max-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      font-size: 2rem;
+      font-family: 'Raleway', sans-serif;
+      margin: 2rem 0;
+    }
+    a {
+      transition: all 0.3s;
+      &:hover {
+        color: deepskyblue;
+      }
+    }
+
+    .socials-wrapper {
+      a {
+        margin-right: 1rem;
+
+        img {
+          height: 5rem;
+					transition: all 0.3s;
+					&:hover {
+						filter: brightness(.7);
+					}
+        }
+      }
     }
   }
 }
